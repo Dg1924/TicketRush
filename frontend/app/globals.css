@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root {
+  --background: #ffffff;
+  --foreground: oklch(0.145 0 0);
+
+  --border: rgba(0, 0, 0, 0.1);
+  --ring: oklch(0.708 0 0);
+
+  --primary: #030213;
+  --primary-foreground: #ffffff;
+
+  --secondary: #f3f3f5;
+  --secondary-foreground: #030213;
+
+  --muted: #ececf0;
+  --muted-foreground: #717182;
+
+  --accent: #e9ebef;
+  --accent-foreground: #030213;
+
+  --radius: 0.625rem;
+}
+
+.dark {
+  --background: oklch(0.145 0 0);
+  --foreground: oklch(0.985 0 0);
+
+  --border: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+
+  --primary: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.205 0 0);
+
+  --secondary: oklch(0.269 0 0);
+  --secondary-foreground: oklch(0.985 0 0);
+
+  --muted: oklch(0.269 0 0);
+  --muted-foreground: oklch(0.708 0 0);
+
+  --accent: oklch(0.269 0 0);
+  --accent-foreground: oklch(0.985 0 0);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --font-sans: var(--font-inter);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  html {
+    font-size: 16px;
+  }
+}
+
+.react-datepicker {
+  background-color: #1a1a2e !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  font-family: inherit !important;
+  border-radius: 0.75rem !important;
+  overflow: hidden;
+}
+
+.react-datepicker__header {
+  background-color: #12121e !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+.react-datepicker__current-month, 
+.react-datepicker-time__header, 
+.react-datepicker__day-name {
+  color: #fff !important;
+}
+
+.react-datepicker__day, 
+.react-datepicker__time-name {
+  color: #d1d5db !important;
+}
+
+.react-datepicker__day:hover, 
+.react-datepicker__month-text:hover {
+  background-color: rgba(249, 115, 22, 0.2) !important;
+  color: #f97316 !important;
+  border-radius: 0.5rem !important;
+}
+
+.react-datepicker__day--selected, 
+.react-datepicker__day--keyboard-selected {
+  background-color: #f97316 !important; 
+  color: #fff !important;
+  border-radius: 0.5rem !important;
+}
+
+.react-datepicker__time-container {
+  border-left: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+.react-datepicker__time-container .react-datepicker__time {
+  background-color: #1a1a2e !important;
+}
+.react-datepicker__time-list-item {
+  color: #d1d5db !important;
+}
+.react-datepicker__time-list-item:hover {
+  background-color: rgba(249, 115, 22, 0.2) !important;
+  color: #f97316 !important;
+}
+.react-datepicker__time-list-item--selected {
+  background-color: #f97316 !important;
+  color: #fff !important;
+}
+.react-datepicker__triangle {
+  display: none !important;
+}
